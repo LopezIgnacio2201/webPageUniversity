@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- * Meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="HypoAware - A humorous website about psychiatry, psychology, therapy, and emotional counseling."
+        />
+        <meta
+            name="keywords"
+            content="psychiatry, psychology, therapy, emotional counseling, mental health, disorders, medications, trivia"
+        />
+        <meta name="author" content="Ignacio Ariel Lopez" />
+
+        <title>HypoAware</title>
+
+        <!-- * Icon for web tab -->
+        <link
+            rel="icon"
+            href="/webPageUniversity/sources/pics/ico/mainLogo.png"
+            type="image/x-icon"
+        />
+
+        <!-- * Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- * Bootstrap CSS -->
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <!-- * Personal styles -->
+
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/banner.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/navbar.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/generalStyles/fonts.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/generalStyles/butttons.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/modal.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/card-group.css"
+        />
+        <link rel="stylesheet" href="/webPageUniversity/sources/css/misc.css" />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/footer.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+    </head>
+
+    <body class="body-font backgroundColour">
+        <!-- MODALS -->
+
+        <!-- * Disclaimer modal-->
+
+        <div
+            class="modal fade"
+            id="disclaimerModal"
+            tabindex="-1"
+            aria-labelledby="disclaimerLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="disclaimerLabel">
+                            Advertencia
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Este sitio web contiene discusiones y contenido
+                            relacionado con temas sensibles, incluidos
+                            trastornos de salud mental, adicción, suicidio,
+                            autolesiones, consumo de drogas, violencia y otros
+                            materiales perturbadores. La información
+                            proporcionada aquí tiene fines educativos e
+                            informativos y no debe utilizarse como sustituto del
+                            consejo médico profesional, diagnóstico o
+                            tratamiento.
+                        </p>
+                        <p>
+                            Si usted o alguien que conoce está experimentando
+                            una crisis, por favor busque ayuda inmediata de un
+                            profesional de salud mental calificado o contacte a
+                            los servicios de emergencia.
+                        </p>
+                        <p>
+                            Al continuar utilizando este sitio web, usted
+                            reconoce que ha leído y comprendido este aviso legal
+                            y acepta continuar.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary button-dark"
+                            data-bs-dismiss="modal"
+                        >
+                            Entiendo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Register modal-->
+
+        <div
+            class="modal fade"
+            id="registerModal"
+            tabindex="-1"
+            aria-labelledby="registerModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">
+                            Registrar una cuenta
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Direccion de mail
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">
+                                    Confirmar contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="confirmPassword"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                class="btn btn-primary button-dark"
+                                id="registerBtn"
+                            >
+                                Completar registro
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Successful register Modal -->
+
+        <div
+            class="modal fade"
+            id="successModal"
+            tabindex="-1"
+            aria-labelledby="successModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">
+                            Registro exitoso
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Inicia sesion para acceder a nuestros servicios.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary button-dark"
+                            data-bs-dismiss="modal"
+                        >
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Login Modal -->
+
+        <div
+            class="modal fade"
+            id="loginModal"
+            tabindex="-1"
+            aria-labelledby="loginModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">
+                            Iniciar sesion
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">
+                                    Direccion de mail
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="loginEmail"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">
+                                    Contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="loginPassword"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                class="btn btn-primary button-dark"
+                                id="loginBtn"
+                            >
+                                Iniciar sesion
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Alert login Modal -->
+
+        <div
+            class="modal fade"
+            id="alertModal"
+            tabindex="-1"
+            aria-labelledby="alertModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="alertModalLabel">
+                            Hubo un problema :c
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            No sos vos, somos nosotros. Vuelve a intentar mas
+                            tarde.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary button-dark"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Header -->
+
+        <header class="headerFixed">
+            <!-- * BANNER -->
+
+            <div class="container-fluid banner-head">
+                <h1 class="banner-text d-inline">
+                    ¿Sabías que existen distintos tipos de terapias? Quizás sea
+                    hora de cambiar el enfoque.
+                    <a
+                        class="font-link d-block d-lg-inline"
+                        target="_blank"
+                        href="https://www.inspirapr.com/post/tipos-de-terapia-salud-mental"
+                    >
+                        Lee más aquí
+                    </a>
+                </h1>
+            </div>
+
+            <!-- * Navbar -->
+
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+            >
+                <div
+                    class="container d-flex justify-content-center align-items-center"
+                >
+                    <a class="navbar-brand me-3" href="#">
+                        <img
+                            src="/webPageUniversity/sources/pics/ico/mainLogo.png"
+                            alt="Logo"
+                            height="50"
+                        />
+                    </a>
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse justify-content-center"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/index.html"
+                                >
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/medication.html"
+                                >
+                                    Medicación
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/addiction.html"
+                                >
+                                    Adicción
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/quienessomos.html"
+                                >
+                                    ¿Quiénes somos?
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/contact.html"
+                                >
+                                    Contacto
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/services.html"
+                                >
+                                    Nuestros servicios
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="navbar-buttons d-flex">
+                            <button
+                                class="btn btn-primary button-default button-charcoal me-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#loginModal"
+                            >
+                                Iniciar sesión
+                            </button>
+                            <button
+                                class="btn btn-secondary button-default button-navy"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#registerModal"
+                            >
+                                Registrarse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- * Main content -->
+
+        <main>
+            <h1 class="text-center header-font">
+                ¿Cómo reconocer los signos de un trastorno mental?
+            </h1>
+
+            <p class="text-center body-font">
+                Muchas veces se piensa que los trastornos mentales son
+                evidentes, pero hay señales sutiles que pueden indicar un
+                problema.
+            </p>
+
+            <div class="container-fluid card-group">
+                <div class="card col-12 col-sm-6 col-md-4">
+                    <img
+                        src="/webPageUniversity/sources/pics/card-left.png"
+                        class="card-img-index"
+                        alt="..."
+                    />
+                </div>
+
+                <div class="card col-12 col-sm-6 col-md-4">
+                    <img
+                        src="/webPageUniversity/sources/pics/card-center.jpg"
+                        class="card-img-index"
+                        alt="..."
+                    />
+                </div>
+
+                <div class="card col-12 col-sm-6 col-md-4">
+                    <img
+                        src="/webPageUniversity/sources/pics/card-right.png"
+                        class="card-img-index"
+                        alt="..."
+                    />
+                </div>
+            </div>
+
+            <div class="container text-center my-5">
+                <h2 class="header-font">Signos de trastornos mentales</h2>
+
+                <p class="body-font">
+                    Pasa el cursor sobre los íconos para aprender más sobre los
+                    signos de trastornos mentales comunes.
+                </p>
+
+                <div class="d-flex justify-content-around mt-4">
+                    <div>
+                        <i
+                            class="fas fa-sad-tear"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Tristeza persistente o vacío."
+                        ></i>
+
+                        <p>Tristeza</p>
+                    </div>
+
+                    <div>
+                        <i
+                            class="fas fa-exclamation-circle"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Sentimientos de ansiedad y preocupación excesiva."
+                        ></i>
+
+                        <p>Ansiedad</p>
+                    </div>
+
+                    <div>
+                        <i
+                            class="fas fa-microphone-alt"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Dificultad para concentrarse o tomar decisiones."
+                        ></i>
+
+                        <p>Dificultad de concentración</p>
+                    </div>
+
+                    <div>
+                        <i
+                            class="fas fa-user-friends"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="top"
+                            title="Aislamiento social o pérdida de interés en actividades."
+                        ></i>
+
+                        <p>Aislamiento social</p>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="container text-end my-5">
+                <blockquote class="blockquote">
+                    <p>
+                        “You are not your illness. You have an individual story
+                        to tell.
+                        <br />
+
+                        You have a name, a history, a personality. Staying
+                        yourself is part of the battle.
+                    </p>
+                </blockquote>
+
+                <figcaption class="blockquote-footer">
+                    Julian Seifter
+                </figcaption>
+            </figure>
+
+            <figure class="container text-start my-5">
+                <blockquote class="blockquote">
+                    <p>
+                        “We all have scars. We all have things that we’ve gone
+                        through that have hurt us,
+                        <br />
+
+                        but we can find beauty in that, and I’m not afraid to
+                        speak about my emotions,
+                        <br />
+
+                        and I think it’s important for everyone to do the same.
+                    </p>
+                </blockquote>
+
+                <figcaption class="blockquote-footer">
+                    Chester Bennington
+                </figcaption>
+            </figure>
+
+            <div class="container text-center body-card-footer">
+                <h4 class="display-4 header-font">
+                    Comprendiendo la Salud Mental
+                </h4>
+
+                <br />
+
+                <p class="lead body-font">
+                    La salud mental es un aspecto esencial de nuestro bienestar
+                    general. Afecta cómo pensamos, sentimos y actuamos en
+                    nuestra vida diaria. La salud mental abarca una amplia gama
+                    de condiciones, incluidos los trastornos de ansiedad, la
+                    depresión y la esquizofrenia, entre otros.
+                </p>
+
+                <hr class="my-4" />
+
+                <p class="body-font">
+                    La intervención temprana y el tratamiento son cruciales para
+                    manejar los trastornos de salud mental. Al fomentar un
+                    entorno de apoyo y aumentar la concienciación, podemos
+                    ayudar a las personas a buscar ayuda y mejorar su calidad de
+                    vida. Recuerda, la salud mental es tan importante como la
+                    salud física.
+                </p>
+            </div>
+        </main>
+
+        <!-- * Footer -->
+
+        <footer class="bg-dark text-light py-4 footer-style">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h5>HypoAware</h5>
+
+                        <p>Overcoming sorrow, one pill at a time.</p>
+
+                        <div class="social-icons mt-2">
+                            <a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/watch?v=1IxoDvV30W4&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/watch?v=9r10A5dKno8&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-3">
+                <small>&copy; 2024 HypoAware. All rights reserved.</small>
+            </div>
+        </footer>
+
+        <!-- * Bootstrap Scripts -->
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- * Personal Scripts -->
+
+        <script src="/webPageUniversity/sources/js/modal.js"></script>
+        <script src="/webPageUniversity/sources/js/register.js"></script>
+        <script src="/webPageUniversity/sources/js/login.js"></script>
+        <script src="/webPageUniversity/sources/js/tooltips.js"></script>
+    </body>
+</html>

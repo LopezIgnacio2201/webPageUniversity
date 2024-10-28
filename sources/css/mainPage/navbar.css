@@ -1,0 +1,65 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px 20px;
+    border: solid 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo .logo {
+    height: 50px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-menu li {
+    margin: 0 15px;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: #ff6f61;
+}
+
+.navbar-buttons {
+    display: flex;
+}
+
+.btn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff4d50;
+}
+
+.headerFixed {
+    /* Better than fixed, way better */
+    /* ? Though, on mobile it keeps disappearing, */
+    /* ? mobile behaviour I guess, dont know how to fix it */
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Trick for making sure it ALWAYS stays on top*/
+    z-index: 1000;
+}

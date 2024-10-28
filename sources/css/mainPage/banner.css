@@ -1,0 +1,49 @@
+.banner-head {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    background: rgb(51, 51, 51);
+    background: linear-gradient(
+        90deg,
+        rgba(51, 51, 51, 1) 25%,
+        rgba(193, 96, 87, 1) 69%,
+        rgba(245, 224, 179, 1) 98%
+    );
+}
+
+.banner-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.font-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #ff6f61;
+    text-decoration: none;
+    background-color: #ffe4e1;
+    padding: 2px 4px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    width: auto;
+}
+
+.font-link:hover {
+    color: #fff;
+    background-color: #ff6f61;
+}

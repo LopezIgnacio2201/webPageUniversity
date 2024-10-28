@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- * Meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="HypoAware - A humorous website about psychiatry, psychology, therapy, and emotional counseling."
+        />
+        <meta
+            name="keywords"
+            content="psychiatry, psychology, therapy, emotional counseling, mental health, disorders, medications, trivia"
+        />
+        <meta name="author" content="Ignacio Ariel Lopez" />
+
+        <title>HypoAware</title>
+
+        <!-- * Icon for web tab -->
+        <link
+            rel="icon"
+            href="/webPageUniversity/sources/pics/ico/mainLogo.png"
+            type="image/x-icon"
+        />
+
+        <!-- * Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- * Bootstrap CSS -->
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <!-- * Personal styles -->
+
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/banner.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/navbar.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/generalStyles/fonts.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/generalStyles/butttons.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/modal.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/card-group.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/subpages/m_images.css"
+        />
+        <link rel="stylesheet" href="/webPageUniversity/sources/css/misc.css" />
+        <link
+            rel="stylesheet"
+            href="/webPageUniversity/sources/css/mainPage/footer.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+    </head>
+
+    <body class="body-font">
+        <!-- MODALS -->
+
+        <!-- * Register modal-->
+
+        <div
+            class="modal fade"
+            id="registerModal"
+            tabindex="-1"
+            aria-labelledby="registerModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">
+                            Registrar una cuenta
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    Direccion de mail
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">
+                                    Contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">
+                                    Confirmar contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="confirmPassword"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                class="btn btn-primary button-dark"
+                                id="registerBtn"
+                            >
+                                Completar registro
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Successful register Modal -->
+
+        <div
+            class="modal fade"
+            id="successModal"
+            tabindex="-1"
+            aria-labelledby="successModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">
+                            Registro exitoso
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Inicia sesion para acceder a nuestros servicios.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary button-dark"
+                            data-bs-dismiss="modal"
+                        >
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Login Modal -->
+
+        <div
+            class="modal fade"
+            id="loginModal"
+            tabindex="-1"
+            aria-labelledby="loginModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">
+                            Iniciar sesion
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">
+                                    Direccion de mail
+                                </label>
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="loginEmail"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">
+                                    Contraseña
+                                </label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="loginPassword"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="button"
+                                class="btn btn-primary button-dark"
+                                id="loginBtn"
+                            >
+                                Iniciar sesion
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Alert login Modal -->
+
+        <div
+            class="modal fade"
+            id="alertModal"
+            tabindex="-1"
+            aria-labelledby="alertModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="alertModalLabel">
+                            Hubo un problema :c
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            No sos vos, somos nosotros. Vuelve a intentar mas
+                            tarde.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary button-dark"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- * Header -->
+
+        <header class="headerFixed">
+            <!-- * BANNER -->
+
+            <div class="container-fluid banner-head">
+                <h1 class="banner-text d-inline">
+                    ¿Sabías que existen distintos tipos de terapias? Quizás sea
+                    hora de cambiar el enfoque.
+                    <a
+                        class="font-link d-block d-lg-inline"
+                        target="_blank"
+                        href="https://www.inspirapr.com/post/tipos-de-terapia-salud-mental"
+                    >
+                        Lee más aquí
+                    </a>
+                </h1>
+            </div>
+
+            <!-- * Navbar -->
+
+            <nav
+                class="navbar navbar-expand-lg navbar-light bg-white sticky-top"
+            >
+                <div
+                    class="container d-flex justify-content-center align-items-center"
+                >
+                    <a class="navbar-brand me-3" href="#">
+                        <img
+                            src="/webPageUniversity/sources/pics/ico/mainLogo.png"
+                            alt="Logo"
+                            height="50"
+                        />
+                    </a>
+
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse justify-content-center"
+                        id="navbarNav"
+                    >
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/index.html"
+                                >
+                                    Inicio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/medication.html"
+                                >
+                                    Medicación
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/addiction.html"
+                                >
+                                    Adicción
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/quienessomos.html"
+                                >
+                                    ¿Quiénes somos?
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/contact.html"
+                                >
+                                    Contacto
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link"
+                                    href="/webPageUniversity/pages/subpages/services.html"
+                                >
+                                    Nuestros servicios
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="navbar-buttons d-flex">
+                            <button
+                                class="btn btn-primary button-default button-charcoal me-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#loginModal"
+                            >
+                                Iniciar sesión
+                            </button>
+                            <button
+                                class="btn btn-secondary button-default button-navy"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#registerModal"
+                            >
+                                Registrarse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- * Main content -->
+
+        <div class="container mt-5">
+            <h1 class="text-center">
+                Medicamentos Comunes para Trastornos Psiquiátricos y mejores
+                recomendaciones
+            </h1>
+            <br />
+            <p>
+                Bueno, en realidad "los mejores" son en realidad "los menos
+                malos", todos los medicamentos son contraproducentes y tienen
+                sus efectos negativos. Tener un trastorno no es algo que alguien
+                deberia desear.
+            </p>
+            <br />
+
+            <div class="accordion" id="medicationAccordion">
+                <!-- Trastorno Obsesivo Compulsivo -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                        >
+                            Trastorno Obsesivo Compulsivo
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>
+                                        Inhibidores selectivos de la recaptación
+                                        de serotonina (ISRS):
+                                    </strong>
+                                    fluoxetina (Prozac), fluvoxamina (Luvox),
+                                    citalopram (Celexa), escitalopram (Lexapro),
+                                    paroxetina (Paxil), sertralina (Zoloft).
+                                </li>
+                                <li>
+                                    <strong>
+                                        Agentes antipsicóticos atípicos:
+                                    </strong>
+                                    risperidona (Risperdal), aripiprazole
+                                    (Abilify), olanzapina (Zyprexa), quetiapina
+                                    (Seroquel), ziprasidona (Geodon).
+                                </li>
+                                <li>
+                                    <strong>Valproato:</strong>
+                                    valproato sódico (Depakene, Depakote).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trastorno por Déficit de Atención e Hiperactividad -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                        >
+                            Trastorno por Déficit de Atención e Hiperactividad
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>Estimulantes:</strong>
+                                    metilfenidato (Ritalina, Ritalina LA,
+                                    Methylin, Focalin, Focalin XR, Concerta,
+                                    Metadate CD, Daytrana), dextroanfetamina
+                                    (Dexedrine), lisdexamfetamina (Vyvanse),
+                                    sales de anfetamina mezcladas (Adderall,
+                                    Adderall XR).
+                                </li>
+                                <li>
+                                    <strong>Antagonistas de alfa 2:</strong>
+                                    clonidina (Catapres, Kapvay), guanfacina
+                                    (Tenex, Intuniv).
+                                </li>
+                                <li>
+                                    <strong>Atomoxetina:</strong>
+                                    (Strattera).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trastorno Explosivo Intermitente -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                        >
+                            Trastorno Explosivo Intermitente
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>
+                                        Agentes antipsicóticos atípicos:
+                                    </strong>
+                                    risperidona (Risperdal), aripiprazole
+                                    (Abilify), olanzapina (Zyprexa), quetiapina
+                                    (Seroquel), ziprasidona (Geodon).
+                                </li>
+                                <li>
+                                    <strong>Agonistas de alfa 2:</strong>
+                                    clonidina (Catapres, Kapvay), guanfacina
+                                    (Tenex, Intuniv).
+                                </li>
+                                <li>
+                                    <strong>Estabilizadores de humor:</strong>
+                                    valproato sódico (Depakene, Depakote),
+                                    levetiracetam (Keppra), topiramato
+                                    (Topamax).
+                                </li>
+                                <li>
+                                    <strong>ISRS:</strong>
+                                    fluoxetina (Prozac), fluvoxamina (Luvox),
+                                    citalopram (Celexa), escitalopram (Lexapro),
+                                    paroxetina (Paxil), sertralina (Zoloft).
+                                </li>
+                                <li>
+                                    <strong>Betabloqueadores:</strong>
+                                    propranolol (Inderal), nadolol (Corgard),
+                                    metoprolol (Lopressor), pindolol (Visken).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trastornos del Sueño -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFour"
+                            aria-expanded="false"
+                            aria-controls="collapseFour"
+                        >
+                            Trastornos del Sueño
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseFour"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFour"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>Agonistas de melatonina:</strong>
+                                    melatonina (Ramelteon, Rozerem).
+                                </li>
+                                <li>
+                                    <strong>Antihistamínicos:</strong>
+                                    difenhidramina (Benadryl), hidroxizina
+                                    (Atarax, Vistaril).
+                                </li>
+                                <li>
+                                    <strong>Agonistas de alfa 2:</strong>
+                                    clonidina (Catapres, Kapvay), guanfacina
+                                    (Tenex, Intuniv).
+                                </li>
+                                <li>
+                                    <strong>Antidepresivos atípicos:</strong>
+                                    mirtazapina (Remeron), trazodona (Desyrel).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ansiedad -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseFive"
+                            aria-expanded="false"
+                            aria-controls="collapseFive"
+                        >
+                            Ansiedad
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseFive"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingFive"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>ISRS:</strong>
+                                    fluoxetina (Prozac), fluvoxamina (Luvox),
+                                    citalopram (Celexa), escitalopram (Lexapro),
+                                    paroxetina (Paxil), sertralina (Zoloft).
+                                </li>
+                                <li>
+                                    <strong>Buspirona:</strong>
+                                    (Buspar).
+                                </li>
+                                <li>
+                                    <strong>Mirtazapina:</strong>
+                                    (Remeron).
+                                </li>
+                                <li>
+                                    <strong>Duloxetina:</strong>
+                                    (Cymbalta).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Depresión -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSix"
+                            aria-expanded="false"
+                            aria-controls="collapseSix"
+                        >
+                            Depresión
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseSix"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSix"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>ISRS:</strong>
+                                    fluoxetina (Prozac), fluvoxamina (Luvox),
+                                    citalopram (Celexa), escitalopram (Lexapro),
+                                    paroxetina (Paxil), sertralina (Zoloft).
+                                </li>
+                                <li>
+                                    <strong>Antidepresivos atípicos:</strong>
+                                    bupropión (Wellbutrin), mirtazapina
+                                    (Remeron).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trastorno Bipolar -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseSeven"
+                            aria-expanded="false"
+                            aria-controls="collapseSeven"
+                        >
+                            Trastorno Bipolar
+                        </button>
+                    </h2>
+                    <div
+                        id="collapseSeven"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingSeven"
+                        data-bs-parent="#medicationAccordion"
+                    >
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    <strong>Estabilizadores de humor:</strong>
+                                    lamotrigina (Lamictal), ácido valproico
+                                    (Depakene, Depakote), gabapentina
+                                    (Neurontin).
+                                </li>
+                                <li>
+                                    <strong>
+                                        Agentes antipsicóticos atípicos:
+                                    </strong>
+                                    litio, risperidona (Risperdal), aripiprazole
+                                    (Abilify), olanzapina (Zyprexa), quetiapina
+                                    (Seroquel).
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="text-center">
+                Tipos de personalidades segun el Trastorno
+            </h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/adhd.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  1"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">TDAH</h5>
+                            <p class="card-text">
+                                Si, muy lindo ser Dori, hasta que no podes
+                                acordarte de cosas basicas, como los meses (¿A
+                                quien le interesa saber eso?)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/ansiedad.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  2"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Ansiedad</h5>
+                            <p class="card-text">
+                                ¿Te acordas esa vez hace 9 años, cuando le
+                                dijiste "De nada" al cajero? ¿No? Que lastima,
+                                ahora si.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/bipolar.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  3"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Bipolaridad</h5>
+                            <p class="card-text">
+                                JAJAJAJA AMO MI VIDA SOY EL ENVIADO DE DIOS EN
+                                LA TIERRA - quiero desinstalar este juego
+                                llamado vida.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/ocd.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  1"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Obsesivo-Compulsivo</h5>
+                            <p class="card-text">
+                                Imaginate ver la linda como ecuaciones
+                                matematicas, sin sentido claro, muy lindo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/depression.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  2"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Depresion</h5>
+                            <p class="card-text">
+                                No, no y no. No hay nada lindo ni gracioso en
+                                esto, perdon. Lo unico bueno, no se pueden
+                                lastimar los sentimientos de alguien que nunca
+                                los tuvo, jaque mate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img
+                            src="/webPageUniversity/sources/pics/autism.jpg"
+                            class="card-img-top card-img-trastornos"
+                            alt="Tipo de personalidad  3"
+                        />
+                        <div class="card-body">
+                            <h5 class="card-title">Autismo</h5>
+                            <p class="card-text">
+                                O sos la reencarnacion de Van Gogh, o Michael
+                                Scoot. No hay punto medio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="text-center">
+                    <img
+                        src="/webPageUniversity/sources/pics/bingo.jpg"
+                        class="img-fluid"
+                        alt="Medication Bingo Card"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- * Footer -->
+
+        <footer class="bg-dark text-light py-4 footer-style">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <h5>HypoAware</h5>
+
+                        <p>Overcoming sorrow, one pill at a time.</p>
+
+                        <div class="social-icons mt-2">
+                            <a
+                                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/watch?v=1IxoDvV30W4&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-twitter"></i>
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/watch?v=9r10A5dKno8&autoplay=1"
+                                target="_blank"
+                                class="text-light me-3"
+                            >
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center py-3">
+                <small>&copy; 2024 HypoAware. All rights reserved.</small>
+            </div>
+        </footer>
+
+        <!-- * Bootstrap Scripts -->
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- * Personal Scripts -->
+
+        <script src="/webPageUniversity/sources/js/modal.js"></script>
+        <script src="/webPageUniversity/sources/js/register.js"></script>
+        <script src="/webPageUniversity/sources/js/login.js"></script>
+        <script src="/webPageUniversity/sources/js/tooltips.js"></script>
+    </body>
+</html>

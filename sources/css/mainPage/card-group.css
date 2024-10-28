@@ -1,0 +1,17 @@
+.backgroundColour {
+    background-color: rgba(25, 27, 94, 0.1);
+}
+
+.card {
+    margin: 10px;
+}
+
+.card-img-index {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 320px; /* ? Innecessary, but just in case*/
+
+    border: 2px solid rgba(97, 91, 91, 0.1);
+    border-radius: 8px;
+}

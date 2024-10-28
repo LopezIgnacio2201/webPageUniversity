@@ -1,0 +1,9 @@
+footer a:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+}
+
+.footer-style {
+    height: auto;
+    margin-top: 50px;
+}

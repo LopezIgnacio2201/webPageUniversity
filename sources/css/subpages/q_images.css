@@ -1,0 +1,56 @@
+.img-placeholder {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.img-placeholder:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-buttons {
+    margin-top: 10px;
+}
+
+.img-placeholder {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.img-placeholder:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-buttons {
+    margin-top: 10px;
+}
+
+.btn-linkedin {
+    background-color: #0077b5;
+    color: white;
+}
+
+.btn-linkedin:hover {
+    background-color: #005582;
+}
+
+.btn-twitter {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.btn-twitter:hover {
+    background-color: #0c85d0;
+}
+
+.btn-servicios {
+    background-color: #5868b1 !important;
+    color: white;
+}
+
+.btn-servicios:hover {
+    background-color: #6c7f83 !important;
+}

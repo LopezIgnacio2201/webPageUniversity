@@ -1,0 +1,6 @@
+.card-img-personal {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 250px;
+}
